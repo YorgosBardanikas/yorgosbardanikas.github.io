@@ -9,6 +9,82 @@
 
 <body>
 
+<div class="inner-page">
+    <div class="page-header">
+        <span class="section-label">Gallery</span>
+        <h1 class="page-title">Photos</h1>
+    </div>
+    <p class="gallery-intro">
+        A window into life in the lab, at conferences, and beyond.
+        <!-- TO ADD PHOTOS: inside each .gallery-item, replace the .gallery-placeholder div with:
+            <img src="yourphoto.jpg" alt="Caption text">
+            and update the .gallery-caption text. Add more .gallery-item divs to expand the grid. -->
+    </p>
+    <div class="gallery-grid">
+        <div class="gallery-item" onclick="openLightbox(this)">
+        <div class="gallery-placeholder">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <span>Add photo</span>
+        </div>
+        <div class="gallery-caption">Conference, SfN 2024</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+        <div class="gallery-placeholder">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <span>Add photo</span>
+        </div>
+        <div class="gallery-caption">In the lab</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+        <div class="gallery-placeholder">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <span>Add photo</span>
+        </div>
+        <div class="gallery-caption">Fieldwork</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+        <div class="gallery-placeholder">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <span>Add photo</span>
+        </div>
+        <div class="gallery-caption">Poster presentation</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+        <div class="gallery-placeholder">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <span>Add photo</span>
+        </div>
+        <div class="gallery-caption">Team photo</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+        <div class="gallery-placeholder">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <span>Add photo</span>
+        </div>
+        <div class="gallery-caption">Microscopy data</div>
+        </div>
+    </div>
+</div>
+
+
 <script>
   function openLightbox(item) {
   const img = item.querySelector('img');
