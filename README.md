@@ -1,4 +1,2 @@
 
-To visit my personal website, click [here](https://yorgosbardanikas.github.io/)
-
-# yorgosbardanikas.github.io
+# To visit my personal website, click [here](https://yorgosbardanikas.github.io/).
