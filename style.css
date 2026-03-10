@@ -265,6 +265,16 @@ nav {
 .cv-spacer { height: 2rem; }
 .cv-download { grid-column: 1 / -1; text-align: center; padding-top: 1rem; }
 
+.europe-map{
+max-width:900px;
+margin:auto;
+}
+
+svg{
+width:100%;
+height:auto;
+}
+
 #map {
   height: 420px;
   width: 100%;
