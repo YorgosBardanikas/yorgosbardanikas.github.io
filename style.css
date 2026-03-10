@@ -265,10 +265,59 @@ nav {
 .cv-spacer { height: 2rem; }
 .cv-download { grid-column: 1 / -1; text-align: center; padding-top: 1rem; }
 
+
+/* ══════════════════════════════
+    Bio PAGE
+══════════════════════════════ */
+.bio-journey{
+max-width:1100px;
+margin:60px auto;
+padding:0 20px;
+}
+
+.journey-grid{
+display:grid;
+grid-template-columns: 1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.journey-text h2{
+margin-bottom:30px;
+}
+
+.journey-item{
+position:relative;
+}
+
+.journey-item::before{
+content:"";
+position:absolute;
+left:-8px;
+top:6px;
+width:10px;
+height:10px;
+background:#2b6cb0;
+border-radius:50%;
+}
+
+.journey-item.highlight{
+background:#f5f7fa;
+border-radius:6px;
+padding:10px;
+}
+
 .europe-map{
 position:relative;
 max-width:800px;
 margin:40px auto;
+}
+
+.map-title{
+text-align:center;
+margin-top:40px;
+margin-bottom:20px;
+font-size:28px;
 }
 
 .map-base{
@@ -285,18 +334,35 @@ height:100%;
 pointer-events:none;
 }
 
+.map-overlay circle{
+transition: all 0.3s ease;
+}
+
+.map-overlay circle.active{
+r:12;
+fill:#e63946;
+filter: drop-shadow(0 0 6px #e63946);
+}
+
 text{
 font-size:14px;
 font-weight:600;
 fill:#1a1a1a;
 }
 
-#map {
-  height: 420px;
-  width: 100%;
-  border-radius: 12px;
-  margin-top: 20px;
+.city-photo{
+width:100%;
+max-width:320px;
+border-radius:8px;
+margin-top:10px;
 }
+
+@media (max-width:900px){
+.journey-grid{
+grid-template-columns:1fr;
+}
+}
+
 
 /* ══════════════════════════════
     GALLERY PAGE
