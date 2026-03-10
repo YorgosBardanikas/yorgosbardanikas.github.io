@@ -269,106 +269,228 @@ nav {
 /* ══════════════════════════════
     Bio PAGE
 ══════════════════════════════ */
+.bio-journey {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 8rem 2rem 5rem;
+}
+
+.bio-journey h2 {
+    font-family: 'Lora', serif;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 600;
+    color: var(--bark);
+    margin-bottom: 2.5rem;
+}
+
+/* ── Two-column layout: timeline left, map right ── */
+.journey-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* equal halves */
+    gap: 60px;
+    align-items: start;
+}
+
+/* ── Left: timeline ── */
+.journey-text {
+    border-left: 2px solid var(--sand);
+    padding-left: 28px;
+}
+
+.journey-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 90px 1fr;  /* year | content */
+    gap: 16px;
+    margin-bottom: 32px;
+    align-items: start;
+    cursor: default;
+    transition: background 0.2s;
+    border-radius: 8px;
+    padding: 8px 10px 8px 0;
+}
+
+/* bullet on the left border */
+.journey-item::before {
+    content: "";
+    position: absolute;
+    left: -35px;                       /* sits on the border-left line */
+    top: 14px;
+    width: 10px;
+    height: 10px;
+    background: var(--terracotta);
+    border: 2px solid var(--cream);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px var(--terracotta);
+}
+
+.journey-item.highlight {
+    background: var(--warm-bg);
+    padding-left: 10px;
+}
+
+.journey-year {
+    font-weight: 600;
+    color: var(--muted);
+    font-size: 0.88rem;
+    padding-top: 3px;
+    white-space: nowrap;
+}
+
+.journey-content h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-family: 'Lora', serif;
+    color: var(--bark);
+}
+
+.journey-content p {
+    margin: 2px 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.journey-location {
+    color: var(--accent) !important;
+    font-size: 0.85rem !important;
+}
+
+/* ── Right: map ── */
+.europe-map {
+    position: relative;               /* needed for SVG overlay */
+    width: 100%;
+    line-height: 0;                   /* removes gap under inline img */
+}
+
+.europe-map img.map-base {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    border: 1px solid var(--sand);
+}
+
+/* overlay sits exactly on top of the img */
+.map-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;             /* clicks pass through to img */
+}
+
+.map-overlay circle {
+    transition: r 0.25s ease, filter 0.25s ease;
+    pointer-events: all;              /* but dots are still hoverable */
+    cursor: pointer;
+}
+
+.map-overlay circle.active {
+    r: 10;
+    filter: drop-shadow(0 0 6px #c0714f);
+}
+
+.map-overlay text {
+    font-size: 13px;
+    font-weight: 600;
+    fill: var(--bark);
+    pointer-events: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .journey-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    }
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+}
+
+
+/*
 .bio-journey{
 max-width:1100px;
-margin:80px auto;
+margin:60px auto;
 padding:0 20px;
 }
 
 .journey-grid{
 display:grid;
-grid-template-columns: 480px 1fr;
+grid-template-columns: 1fr 1fr;
 gap:80px;
 align-items:start;
-}
-
-/* LEFT SIDE (CV timeline) */
-
-.journey-text{
-position:relative;
-padding-left:30px;
-border-left:2px solid #e4e7eb;
-}
-
-.journey-text h2{
-margin-bottom:40px;
 }
 
 .journey-item{
 position:relative;
 display:grid;
-grid-template-columns:110px 1fr;
-gap:18px;
-margin-bottom:36px;
+grid-template-columns:120px 1fr;
+gap:20px;
+margin-bottom:35px;
+align-items:start;
 }
-
-.journey-item:hover{
-transform:translateX(3px);
-transition:0.2s;
-}
-
-/* timeline dot */
 
 .journey-item::before{
 content:"";
 position:absolute;
-left:-36px;
-top:6px;
+left:-32px;
+top:5px;
 width:10px;
 height:10px;
 background:#2b6cb0;
 border-radius:50%;
 }
 
-/* year column */
+.journey-item.highlight{
+background:#f5f7fa;
+border-radius:6px;
+padding:10px;
+}
 
 .journey-year{
 font-weight:600;
-font-size:0.9rem;
-color:#6b7280;
+color:#666;
+font-size:0.95rem;
 }
-
-/* content column */
 
 .journey-content h3{
 margin:0;
 font-size:1.05rem;
-font-weight:600;
 }
 
 .journey-content p{
-margin:4px 0;
-font-size:0.95rem;
+margin:3px 0;
+}
+
+.journey-text h2{
+margin-bottom:40px;
+}
+
+.journey-text{
+border-left:2px solid #e3e6ea;
+padding-left:25px;
+max-width:520px;
 }
 
 .journey-location{
-color:#8b8b8b;
+color:#888;
 font-size:0.9rem;
 }
 
-/* photo */
 
-.city-photo{
-width:100%;
-max-width:300px;
-border-radius:6px;
-margin-top:10px;
-}
 
-/* optional highlight */
-
-.journey-item.highlight{
-background:#f7f9fc;
-border-radius:6px;
-padding:12px;
-}
-
-/* RIGHT SIDE (MAP) */
 
 .europe-map{
 position:relative;
-width:100%;
-max-width:600px;
+max-width:800px;
+margin:40px auto;
+}
+
+.map-title{
+text-align:center;
+margin-top:40px;
+margin-bottom:20px;
+font-size:28px;
 }
 
 .map-base{
@@ -382,43 +504,38 @@ top:0;
 left:0;
 width:100%;
 height:100%;
+pointer-events:none;
 }
 
-/* map dots */
-
 .map-overlay circle{
-transition:all 0.25s ease;
+transition: all 0.3s ease;
 }
 
 .map-overlay circle.active{
-r:14;
+r:20;
 fill:#e63946;
-filter:drop-shadow(0 0 6px rgba(230,57,70,0.6));
+filter: drop-shadow(0 0 6px #e63946);
 }
 
-/* labels */
-
-.map-overlay text{
-font-size:13px;
+text{
+font-size:14px;
 font-weight:600;
-fill:#1f2937;
+fill:#1a1a1a;
 }
 
-/* MOBILE */
+.city-photo{
+width:100%;
+max-width:320px;
+border-radius:8px;
+margin-top:10px;
+}
 
 @media (max-width:900px){
-
 .journey-grid{
 grid-template-columns:1fr;
-gap:50px;
 }
-
-.europe-map{
-max-width:100%;
 }
-
-}
-
+*/
 
 /* ══════════════════════════════
     GALLERY PAGE
