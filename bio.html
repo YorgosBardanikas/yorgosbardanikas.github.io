@@ -20,35 +20,88 @@
   </ul>
 </nav>
 
-<h2 class="map-title">My academic path across Europe</h2>
 
-<div class="europe-map">
+<section class="bio-journey">
 
-    <img src="images/europe-map.svg" width="800" height="500">
-    <svg class="map-overlay" viewBox="0 0 800 500">
+  <!-- left -->
+  <div class="journey-grid">
 
-    <!-- curved trajectory -->
-    <path
-    d="M445 414 Q360 320 300 290 T280 390"
-    stroke="#2b6cb0"
-    stroke-width="3"
-    fill="none"
-    stroke-dasharray="6,6"
-    />
+    <div class="journey-text">
 
-    <!-- markers -->
-    <circle cx="445" cy="414" r="6" fill="#2b6cb0"/>
-    <circle cx="300" cy="290" r="6" fill="#2b6cb0"/>
-    <circle cx="280" cy="390" r="6" fill="#2b6cb0"/>
+    <h2>My academic journey</h2>
 
-    <!-- labels -->
-    <text x="455" y="414">Thessaloniki 🇬🇷</text>
-    <text x="310" y="290">Nijmegen 🇳🇱</text>
-    <text x="290" y="390">Marseille 🇫🇷</text>
+    <div class="journey-item" data-city="thess">
+    <h3>Thessaloniki, Greece 🇬🇷</h3>
+    <p>BSc in Physics</p>
+    </div>
 
-    </svg>
-</div>
+    <div class="journey-item" data-city="nijmegen">
+    <h3>Nijmegen, Netherlands 🇳🇱</h3>
+    <p>MSc in Neuroscience</p>
+    </div>
 
+    <div class="journey-item" data-city="marseille">
+    <h3>Marseille, France 🇫🇷</h3>
+    <p>PhD in Neuroscience</p>
+    </div>
+
+  </div>
+
+
+  <!-- right -->
+  <div class="europe-map">
+
+      <img src="images/europe-map.svg" width="800" height="500">
+      <svg class="map-overlay" viewBox="0 0 800 500">
+
+      <!-- curved trajectory -->
+      <path
+      d="M445 414 Q360 320 300 290 T280 390"
+      stroke="#2b6cb0"
+      stroke-width="3"
+      fill="none"
+      stroke-dasharray="6,6"
+      />
+
+      <!-- markers -->
+      <circle id="dot-thess" cx="445" cy="414" r="6" fill="#2b6cb0"/>
+      <circle id="dot-nijmegen" cx="300" cy="290" r="6" fill="#2b6cb0"/>
+      <circle id="dot-marseille" cx="280" cy="390" r="6" fill="#2b6cb0"/>
+
+      <!-- labels -->
+      <text x="455" y="414">Thessaloniki 🇬🇷</text>
+      <text x="310" y="290">Nijmegen 🇳🇱</text>
+      <text x="290" y="390">Marseille 🇫🇷</text>
+
+      </svg>
+  </div>
+</section>
+
+
+<script>
+
+const items = document.querySelectorAll(".journey-item");
+
+items.forEach(item => {
+
+const city = item.dataset.city;
+const dot = document.getElementById("dot-" + city);
+
+item.addEventListener("mouseenter", () => {
+dot.classList.add("active");
+});
+
+item.addEventListener("mouseleave", () => {
+dot.classList.remove("active");
+});
+
+dot.addEventListener("mouseenter", () => {
+item.classList.add("highlight");
+});
+
+});
+
+</script>
 
 
 <!--
