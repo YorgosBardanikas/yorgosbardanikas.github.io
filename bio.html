@@ -22,94 +22,95 @@
 
 
 <section class="bio-journey">
+  
+  <h2>My academic journey</h2>
 
-  <!-- left -->
   <div class="journey-grid">
 
+    <!-- ── LEFT: timeline ── -->
     <div class="journey-text">
 
-    <h2>My academic journey</h2>
+      <div class="journey-item" data-city="thess">
+        <div class="journey-year">2013 – 2018</div>
+        <div class="journey-content">
+          <h3>Aristotle University</h3>
+          <p>BSc in Physics</p>
+          <p class="journey-location">Thessaloniki, Greece 🇬🇷</p>
+        </div>
+      </div><!-- /.journey-item -->
 
-    <div class="journey-item" data-city="thess">
-    <div class="journey-year">2013-2018</div>
-    <div class="journey-content">
-    <h3>Aristotle University</h3>
-    <p>BSc in Physics</p>
-    <p class="journey-location">Thessaloniki, Greece 🇬🇷</p>
-    </div>
+      <div class="journey-item" data-city="nijmegen">
+        <div class="journey-year">2018 – 2020</div>
+        <div class="journey-content">
+          <h3>Radboud University</h3>
+          <p>MSc in Neuroscience</p>
+          <p class="journey-location">Nijmegen, Netherlands 🇳🇱</p>
+        </div>
+      </div><!-- /.journey-item -->
 
-    <div class="journey-item" data-city="nijmegen">
-    <div class="journey-year">2018-2020</div>
-    <div class="journey-content">
-    <h3>Radboud University</h3>
-    <p>MSc in Neuroscience</p>
-    <p class="journey-location">Nijmegen, Netherlands 🇳🇱</p>
-    </div>
+      <div class="journey-item" data-city="marseille">
+        <div class="journey-year">2021 – 2025</div>
+        <div class="journey-content">
+          <h3>Aix-Marseille University</h3>
+          <p>PhD in Neuroscience</p>
+          <p class="journey-location">Marseille, France 🇫🇷</p>
+        </div>
+      </div><!-- /.journey-item -->
 
-    <div class="journey-item" data-city="marseille">
-    <div class="journey-year">2021-2025</div>
-    <div class="journey-content">
-    <h3>Aix Marseille University</h3>
-    <p>PhD in Neuroscience</p>
-    <p class="journey-location">Marseille, France 🇫🇷</p>
-    </div>
-
-  </div>
+    </div><!-- /.journey-text -->
 
 
-  <!-- right -->
-  <div class="europe-map">
+    <!-- ── RIGHT: map ── -->
+    <div class="europe-map">
 
-      <img src="images/europe-map.svg" width="800" height="500">
-      <svg class="map-overlay" viewBox="0 0 800 500">
+        <!-- <img src="images/europe-map.svg" width="800" height="500">-->
+        <img class="map-base" src="images/europe-map.svg" alt="Map of Europe" width="800" height="500"/>
+        <svg class="map-overlay" viewBox="0 0 800 500">
 
-      <!-- curved trajectory -->
-      <path
-      d="M445 414 Q360 320 300 290 T280 390"
-      stroke="#2b6cb0"
-      stroke-width="3"
-      fill="none"
-      stroke-dasharray="6,6"
-      />
+        <!-- curved trajectory -->
+        <path
+        d="M445 414 Q360 320 300 290 T280 390"
+        stroke="#2b6cb0"
+        stroke-width="3"
+        fill="none"
+        stroke-dasharray="6,6"
+        />
 
-      <!-- markers -->
-      <circle id="dot-thess" cx="445" cy="414" r="6" fill="#2b6cb0"/>
-      <circle id="dot-nijmegen" cx="300" cy="290" r="6" fill="#2b6cb0"/>
-      <circle id="dot-marseille" cx="280" cy="390" r="6" fill="#2b6cb0"/>
+        <!-- markers -->
+        <circle id="dot-thess" cx="445" cy="414" r="6" fill="#2b6cb0"/>
+        <circle id="dot-nijmegen" cx="300" cy="290" r="6" fill="#2b6cb0"/>
+        <circle id="dot-marseille" cx="280" cy="390" r="6" fill="#2b6cb0"/>
 
-      <!-- labels -->
-      <text x="455" y="414">Thessaloniki 🇬🇷</text>
-      <text x="310" y="290">Nijmegen 🇳🇱</text>
-      <text x="290" y="390">Marseille 🇫🇷</text>
+        <!-- labels -->
+        <text x="455" y="414">Thessaloniki 🇬🇷</text>
+        <text x="310" y="290">Nijmegen 🇳🇱</text>
+        <text x="290" y="390">Marseille 🇫🇷</text>
 
-      </svg>
-  </div>
+        </svg>
+    </div><!-- /.europe-map -->
+
+  </div><!-- /.journey-grid -->
+
 </section>
 
 
 <script>
+  const items = document.querySelectorAll(".journey-item");
 
-const items = document.querySelectorAll(".journey-item");
+  items.forEach(item => {
+    const city = item.dataset.city;
+    const dot  = document.getElementById("dot-" + city);
+    if (!dot) return;
 
-items.forEach(item => {
+    // hover on text → highlight dot
+    item.addEventListener("mouseenter", () => dot.classList.add("active"));
+    item.addEventListener("mouseleave", () => dot.classList.remove("active"));
 
-const city = item.dataset.city;
-const dot = document.getElementById("dot-" + city);
-
-item.addEventListener("mouseenter", () => {
-dot.classList.add("active");
-});
-
-item.addEventListener("mouseleave", () => {
-dot.classList.remove("active");
-});
-
-dot.addEventListener("mouseenter", () => {
-item.classList.add("highlight");
-});
-
-});
-
+    // hover on dot → highlight text row
+    dot.style.pointerEvents = "all";
+    dot.addEventListener("mouseenter", () => item.classList.add("highlight"));
+    dot.addEventListener("mouseleave", () => item.classList.remove("highlight"));
+  });
 </script>
 
 
