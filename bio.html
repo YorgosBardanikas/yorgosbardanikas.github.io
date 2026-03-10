@@ -5,6 +5,9 @@
 <meta charset="UTF-8">
 <title>Bio | Georgios Bardanikas</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-curve@0.9.0/leaflet.curve.min.js"></script>
 </head>
 
 <body>
@@ -19,6 +22,103 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
+
+<h2>My academic path across Europe</h2>
+
+<div id="map"></div>
+
+
+<script>
+
+var map = L.map('map').setView([48, 9], 4);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap'
+}).addTo(map);
+
+
+L.circleMarker([52.3676, 4.9041], {
+  radius: 8,
+  color: "#2b6cb0",
+  fillColor: "#2b6cb0",
+  fillOpacity: 0.9
+}).addTo(map).bindPopup("<b>Greece 🇬🇷</b><br>BSc Studies");
+
+
+L.circleMarker([52.3676, 4.9041], {
+  radius: 8,
+  color: "#2b6cb0",
+  fillColor: "#2b6cb0",
+  fillOpacity: 0.9
+}).addTo(map).bindPopup("<b>Italy 🇮🇹</b><br>Erasmus Exchange");
+
+
+L.circleMarker([52.3676, 4.9041], {
+  radius: 8,
+  color: "#2b6cb0",
+  fillColor: "#2b6cb0",
+  fillOpacity: 0.9
+}).addTo(map).bindPopup("<b>Netherlands 🇳🇱</b><br>MSc");
+
+
+L.circleMarker([52.3676, 4.9041], {
+  radius: 8,
+  color: "#2b6cb0",
+  fillColor: "#2b6cb0",
+  fillOpacity: 0.9
+}).addTo(map).bindPopup("<b>France 🇫🇷</b><br>PhD");
+
+
+L.circleMarker([52.3676, 4.9041], {
+  radius: 8,
+  color: "#2b6cb0",
+  fillColor: "#2b6cb0",
+  fillOpacity: 0.9
+}).addTo(map).bindPopup("<b>Germany 🇩🇪</b><br>Visiting PhD");
+
+
+var locations = [
+  [40.6401, 22.9444],
+  [45.4642, 9.19],
+  [52.3676, 4.9041],
+  [48.8566, 2.3522],
+  [49.4875, 8.466]
+];
+
+var labels = [
+  "Greece 🇬🇷 – BSc",
+  "Italy 🇮🇹 – Erasmus",
+  "Netherlands 🇳🇱 – MSc",
+  "France 🇫🇷 – PhD",
+  "Germany 🇩🇪 – Visiting PhD"
+];
+
+locations.forEach(function(coord, i){
+  L.circleMarker(coord, {
+    radius: 8,
+    color: "#2b6cb0",
+    fillColor: "#2b6cb0",
+    fillOpacity: 1
+  }).addTo(map).bindPopup(labels[i]);
+});
+
+var curve = L.curve([
+  'M', [40.6401,22.9444],   // Greece
+  'Q', [43,15],             // control point (curve shape)
+       [45.4642,9.19],      // Italy
+
+  'T', [52.3676,4.9041],    // Netherlands
+  'T', [48.8566,2.3522],    // France
+  'T', [49.4875,8.466]      // Germany
+], {
+  color: '#2b6cb0',
+  weight: 3,
+  opacity: 0.9
+}).addTo(map);
+
+map.fitBounds(path.getBounds());
+
+</script>
 
 <!--
 <div class="inner-page">
