@@ -270,7 +270,7 @@ nav {
     Bio PAGE
 ══════════════════════════════ */
 .bio-journey {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 8rem 2rem 5rem;
 }
@@ -285,12 +285,56 @@ nav {
 
 .journey-grid {
     display: grid;
-    grid-template-columns: 1fr 1.3fr;
-    gap: 200px;
+    grid-template-columns: 180px 1fr 1fr;
+    gap: 50px;
     align-items: start;
 }
 
-/* ── Timeline ── */
+/* Column 1, Photos */
+.journey-photos {
+display: flex;
+flex-direction: column;
+padding-top: 4px;       /* fine-tune to align with first timeline entry */
+}
+
+.city-photo-item {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-bottom: 0;       /* controlled by spacers below */
+}
+
+.city-photo-spacer {
+flex-shrink: 0;
+}
+
+.city-thumb {
+width: 160px;
+height: 110px;
+object-fit: cover;
+border-radius: 10px;
+border: 1px solid var(--sand, #e8ddd0);
+box-shadow: 0 4px 14px rgba(74,55,40,0.12);
+display: block;
+transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.city-thumb:hover {
+transform: scale(1.03);
+box-shadow: 0 8px 22px rgba(74,55,40,0.18);
+}
+
+.city-photo-label {
+font-size: 0.75rem;
+color: var(--muted, #7a6a5a);
+margin-top: 5px;
+text-align: center;
+font-style: italic;
+}
+
+
+
+/* Column 2, Timeline */
 .journey-text {
     border-left: 4px solid var(--sand);
     padding-left: 28px;
@@ -317,16 +361,16 @@ nav {
     top: 14px;
     width: 10px;
     height: 10px;
-    background: var(--terracotta);
-    border: 2px solid var(--cream);
+    background: var(--terracotta, #c0714f);
+    border: 2px solid var(--cream, #faf7f2);
     border-radius: 50%;
-    box-shadow: 0 0 0 2px var(--terracotta);
+    box-shadow: 0 0 0 2px var(--terracotta, #c0714f);
     transition: transform 0.2s;
 }
 
 .journey-item.highlight,
 .journey-item:hover {
-    background: var(--warm-bg);
+    background: var(--warm-bg, #f3ede3);
     padding-left: 10px;
 }
 .journey-item.highlight::before,
@@ -346,17 +390,17 @@ nav {
     margin: 0;
     font-size: 1rem;
     font-family: 'Lora', serif;
-    color: var(--bark);
+    color: var(--bark, #4a3728);
 }
 
 .journey-content p {
     margin: 2px 0;
     font-size: 0.9rem;
-    color: var(--muted);
+    color: var(--muted, #7a6a5a);
 }
 
 .journey-location {
-    color: var(--accent) !important;
+    color: var(--accent, #6b8f71) !important;
     font-size: 0.85rem !important;
 }
 
@@ -365,7 +409,7 @@ nav {
     margin-left: 28px;           /* indent under the main entry */
     margin-bottom: 20px;
     padding-left: 16px;
-    border-left: 3px dashed var(--sand);
+    border-left: 3px dashed var(--sand, #e8ddd0);
 }
 
 .sub-item {
@@ -435,7 +479,9 @@ nav {
 /* spacer between main entries */
 .journey-gap { height: 18px; }
 
-/* ── Map ── */
+
+
+/* Column 3, Map */
 .europe-map {
     position: relative;
     width: 100%;
@@ -448,7 +494,7 @@ nav {
     height: auto;
     display: block;
     border-radius: 12px;
-    border: 1px solid var(--sand);
+    border: 1px solid var(--sand, #e8ddd0);
 }
 
 .map-overlay {
@@ -476,12 +522,12 @@ nav {
 .map-label-group text {
     font-size: 17px;
     font-weight: 600;
-    fill: var(--bark);
+    fill: var(--bark, #4a3728);
     transition: fill 0.2s;
 }
 .map-label-group:hover text,
 .map-label-group.active text {
-    fill: var(--terracotta);
+    fill: var(--terracotta, #c0714f);
 }
 
 /* label hit-area rect (invisible, just for pointer events) */
@@ -490,11 +536,19 @@ nav {
     pointer-events: all;
 }
 
-@media (max-width: 900px) {
-    .journey-grid { grid-template-columns: 1fr; gap: 40px; }
+
+/* Responsive */
+@media (max-width: 1050px) {
+    .journey-grid { grid-template-columns: 1fr 1fr; }
     nav { padding: 1rem 1.5rem; }
     .nav-links { gap: 1.2rem; }
 }
+
+@media (max-width: 700px) {
+.journey-grid { grid-template-columns: 1fr; }
+}
+
+
 
 /* ══════════════════════════════
     GALLERY PAGE
