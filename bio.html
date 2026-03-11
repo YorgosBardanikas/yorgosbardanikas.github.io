@@ -30,30 +30,30 @@
     <!-- ── LEFT: timeline ── -->
     <div class="journey-text">
 
-      <div class="journey-item" data-city="thess">
-        <div class="journey-year">2013 – 2018</div>
+      <div class="journey-item" id="item-marseille" data-city="marseille">
+        <div class="journey-year">2021 – 2025</div>
         <div class="journey-content">
-          <h3>Aristotle University</h3>
-          <p>BSc in Physics</p>
-          <p class="journey-location">Thessaloniki, Greece 🇬🇷</p>
+          <h3>PhD in Neuroscience </h3>
+          <p>Aix-Marseille University</p>
+          <p class="journey-location">Marseille, France 🇫🇷</p>
         </div>
       </div><!-- /.journey-item -->
 
-      <div class="journey-item" data-city="nijmegen">
+      <div class="journey-item" id="item-nijmegen" data-city="nijmegen">
         <div class="journey-year">2018 – 2020</div>
         <div class="journey-content">
-          <h3>Radboud University</h3>
-          <p>MSc in Neuroscience</p>
+          <h3>MSc in Neuroscience</h3>
+          <p>Radboud University</p>
           <p class="journey-location">Nijmegen, Netherlands 🇳🇱</p>
         </div>
       </div><!-- /.journey-item -->
 
-      <div class="journey-item" data-city="marseille">
-        <div class="journey-year">2021 – 2025</div>
+      <div class="journey-item" id="item-thess" data-city="thess">
+        <div class="journey-year">2013 – 2018</div>
         <div class="journey-content">
-          <h3>Aix-Marseille University</h3>
-          <p>PhD in Neuroscience</p>
-          <p class="journey-location">Marseille, France 🇫🇷</p>
+          <h3>BSc in Physics</h3>
+          <p>Aristotle University</p>
+          <p class="journey-location">Thessaloniki, Greece 🇬🇷</p>
         </div>
       </div><!-- /.journey-item -->
 
@@ -62,53 +62,112 @@
 
     <!-- ── RIGHT: map ── -->
     <div class="europe-map">
+      <img class="map-base" src="images/europe-map.svg" alt="Map of Europe" width="800" height="500"/>
 
-        <img class="map-base" src="images/europe-map.svg" alt="Map of Europe" width="800" height="500"/>
-        <svg class="map-overlay" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+      <svg class="map-overlay" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
 
-        <!-- curved trajectory -->
+        <!-- trajectory line -->
         <path
-        d="M445 414 Q360 320 300 290 T280 390"
-        stroke="#2b6cb0"
-        stroke-width="3"
-        fill="none"
-        stroke-dasharray="6,6"
+          d="M445 414 Q360 320 300 290 T280 390"
+          stroke="#c0714f" stroke-width="2.5" fill="none"
+          stroke-dasharray="6,5" opacity="0.6"
         />
 
-        <!-- markers -->
-        <circle id="dot-thess" cx="445" cy="414" r="7" fill="#2b6cb0"/>
-        <circle id="dot-nijmegen" cx="300" cy="290" r="7" fill="#2b6cb0"/>
-        <circle id="dot-marseille" cx="280" cy="390" r="7" fill="#2b6cb0"/>
+        <!-- ── Thessaloniki ── -->
+        <circle class="map-dot" id="dot-thess" cx="445" cy="414" r="7" fill="#c0714f"/>
+        <g class="map-label-group" id="label-thess">
+          <rect x="456" y="403" width="115" height="20" rx="3"/>
+          <text x="456" y="418">Thessaloniki 🇬🇷</text>
+        </g>
 
-        <!-- labels -->
-        <text x="455" y="414">Thessaloniki 🇬🇷</text>
-        <text x="310" y="290">Nijmegen 🇳🇱</text>
-        <text x="290" y="390">Marseille 🇫🇷</text>
+        <!-- ── Nijmegen ── -->
+        <circle class="map-dot" id="dot-nijmegen" cx="300" cy="290" r="7" fill="#c0714f"/>
+        <g class="map-label-group" id="label-nijmegen">
+          <rect x="311" y="278" width="95" height="20" rx="3"/>
+          <text x="311" y="293">Nijmegen 🇳🇱</text>
+        </g>
 
-        </svg>
+        <!-- ── Marseille ── -->
+        <circle class="map-dot" id="dot-marseille" cx="280" cy="390" r="7" fill="#c0714f"/>
+        <g class="map-label-group" id="label-marseille">
+          <rect x="291" y="378" width="90" height="20" rx="3"/>
+          <text x="291" y="393">Marseille 🇫🇷</text>
+        </g>
+
+        <!--
+          ADD VISITING / INTERNSHIP DOTS HERE once you know the cities.
+          Example pattern:
+          <circle class="map-dot" id="dot-berlin" cx="350" cy="260" r="6" fill="#6b8f71"/>
+          <g class="map-label-group" id="label-berlin">
+            <rect x="361" y="248" width="60" height="20" rx="3"/>
+            <text x="361" y="263">Berlin 🇩🇪</text>
+          </g>
+        -->
+
+      </svg>
     </div><!-- /.europe-map -->
-
-  </div><!-- /.journey-grid -->
 
 </section>
 
-
 <script>
-  const items = document.querySelectorAll(".journey-item");
+  // Map each data-city to its dot and label elements
+  function getMapEls(city) {
+    return {
+      dot:   document.getElementById("dot-"   + city),
+      label: document.getElementById("label-" + city),
+    };
+  }
 
-  items.forEach(item => {
+  // Activate / deactivate a city on the map
+  function activateCity(city, on) {
+    const { dot, label } = getMapEls(city);
+    if (dot)   dot.classList.toggle("active", on);
+    if (label) label.classList.toggle("active", on);
+  }
+
+  // Activate / deactivate a timeline item
+  function activateItem(id, on) {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle("highlight", on);
+  }
+
+  // Wire up all timeline items (main + sub)
+  document.querySelectorAll(".journey-item, .sub-item").forEach(item => {
     const city = item.dataset.city;
-    const dot  = document.getElementById("dot-" + city);
-    if (!dot) return;
+    if (!city || city.startsWith("[")) return;   // skip placeholder entries
 
-    // hover on text → highlight dot
-    item.addEventListener("mouseenter", () => dot.classList.add("active"));
-    item.addEventListener("mouseleave", () => dot.classList.remove("active"));
+    item.addEventListener("mouseenter", () => activateCity(city, true));
+    item.addEventListener("mouseleave", () => activateCity(city, false));
+  });
 
-    // hover on dot → highlight text row
-    dot.style.pointerEvents = "all";
-    dot.addEventListener("mouseenter", () => item.classList.add("highlight"));
-    dot.addEventListener("mouseleave", () => item.classList.remove("highlight"));
+  // Wire up map dots — highlight the matching timeline item
+  document.querySelectorAll(".map-dot").forEach(dot => {
+    const city   = dot.id.replace("dot-", "");
+    const itemId = "item-" + city;
+
+    dot.addEventListener("mouseenter", () => {
+      activateItem(itemId, true);
+      activateCity(city, true);
+    });
+    dot.addEventListener("mouseleave", () => {
+      activateItem(itemId, false);
+      activateCity(city, false);
+    });
+  });
+
+  // Wire up map labels — same behaviour as dots
+  document.querySelectorAll(".map-label-group").forEach(label => {
+    const city   = label.id.replace("label-", "");
+    const itemId = "item-" + city;
+
+    label.addEventListener("mouseenter", () => {
+      activateItem(itemId, true);
+      activateCity(city, true);
+    });
+    label.addEventListener("mouseleave", () => {
+      activateItem(itemId, false);
+      activateCity(city, false);
+    });
   });
 </script>
 
