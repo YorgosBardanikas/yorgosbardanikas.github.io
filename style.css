@@ -292,7 +292,7 @@ nav {
 
 /* ── Timeline ── */
 .journey-text {
-    border-left: 2px solid var(--sand);
+    border-left: 4px solid var(--sand);
     padding-left: 28px;
 }
 
@@ -365,7 +365,7 @@ nav {
     margin-left: 28px;           /* indent under the main entry */
     margin-bottom: 20px;
     padding-left: 16px;
-    border-left: 1px dashed var(--sand);
+    border-left: 3px dashed var(--sand);
 }
 
 .sub-item {
@@ -440,7 +440,7 @@ nav {
     position: relative;
     width: 100%;
     line-height: 0;
-    margin-top: 200px;
+    margin-top: 150px;
 }
 
 .europe-map img.map-base {
