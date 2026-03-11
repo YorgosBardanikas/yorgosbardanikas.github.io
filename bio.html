@@ -33,9 +33,42 @@
       <div class="journey-item" id="item-marseille" data-city="marseille">
         <div class="journey-year">2021 – 2025</div>
         <div class="journey-content">
+          <h3>Computational Neuroscientist </h3>
+          <p>Institut de Neurosciences de la Timone</p>
+          <p class="journey-location">Marseille, France 🇫🇷</p>
+        </div>
+      </div><!-- /.journey-item -->
+
+      <div class="journey-item" id="item-marseille" data-city="marseille">
+        <div class="journey-year">2021 – 2025</div>
+        <div class="journey-content">
           <h3>PhD in Neuroscience </h3>
           <p>Aix-Marseille University</p>
           <p class="journey-location">Marseille, France 🇫🇷</p>
+        </div>
+      </div><!-- /.journey-item -->
+
+      <div class="journey-sub">
+        <div class="sub-item" id="item-lyon" data-city="lyon">
+          <div class="sub-year">2022</div>
+          <div class="sub-content">
+            <h4>Research secondment</h4>
+            <p>Stem-cell & Biology Research Institute</p>
+            <p class="journey-location">Lyon, France 🇫🇷</p>
+            <span class="sub-tag">Internship</span>
+          </div>
+        </div>
+      </div><!-- /.journey-item -->
+
+      <div class="journey-sub">
+        <div class="sub-item" id="item-gott" data-city="gott">
+          <div class="sub-year">2023</div>
+          <div class="sub-content">
+            <h4>Research secondment</h4>
+            <p>German Primate Center</p>
+            <p class="journey-location">Goettingen, Germany 🇩🇪</p>
+            <span class="sub-tag">Internship</span>
+          </div>
         </div>
       </div><!-- /.journey-item -->
 
@@ -57,6 +90,18 @@
         </div>
       </div><!-- /.journey-item -->
 
+      <div class="journey-sub">
+        <div class="sub-item" id="item-forli" data-city="forli">
+          <div class="sub-year">2018</div>
+          <div class="sub-content">
+            <h4>Data Science Internship | Medical Physics</h4>
+            <p>Istituto Romagnolo per lo Studio dei Tumori</p>
+            <p class="journey-location">Forli, Italy 🇮🇹</p>
+            <span class="sub-tag">Internship</span>
+          </div>
+        </div>
+      </div>
+
     </div><!-- /.journey-text -->
 
 
@@ -72,12 +117,25 @@
           stroke="#c0714f" stroke-width="2.5" fill="none"
           stroke-dasharray="6,5" opacity="0.6"
         />
+        <!-- ── Marseille ── -->
+        <circle class="map-dot" id="dot-marseille" cx="280" cy="390" r="7" fill="#c0714f"/>
+        <g class="map-label-group" id="label-marseille">
+          <rect x="291" y="378" width="90" height="20" rx="3"/>
+          <text x="291" y="393">Marseille 🇫🇷</text>
+        </g>
 
-        <!-- ── Thessaloniki ── -->
-        <circle class="map-dot" id="dot-thess" cx="445" cy="414" r="7" fill="#c0714f"/>
-        <g class="map-label-group" id="label-thess">
-          <rect x="456" y="403" width="115" height="20" rx="3"/>
-          <text x="456" y="418">Thessaloniki 🇬🇷</text>
+        <!-- ── Lyon ── -->
+        <circle class="map-dot" id="dot-lyon" cx="350" cy="260" r="6" fill="#6b8f71"/>
+        <g class="map-label-group" id="label-lyon">
+          <rect x="445" y="248" width="60" height="20" rx="3"/>
+          <text x="455" y="263">Lyon 🇫🇷</text>
+        </g>
+
+        <!-- ── Gottingen ── -->
+        <circle class="map-dot" id="dot-gott" cx="350" cy="260" r="6" fill="#6b8f71"/>
+        <g class="map-label-group" id="label-gott">
+          <rect x="330" y="248" width="60" height="20" rx="3"/>
+          <text x="335" y="263">Gottingen 🇩🇪</text>
         </g>
 
         <!-- ── Nijmegen ── -->
@@ -87,22 +145,20 @@
           <text x="311" y="293">Nijmegen 🇳🇱</text>
         </g>
 
-        <!-- ── Marseille ── -->
-        <circle class="map-dot" id="dot-marseille" cx="280" cy="390" r="7" fill="#c0714f"/>
-        <g class="map-label-group" id="label-marseille">
-          <rect x="291" y="378" width="90" height="20" rx="3"/>
-          <text x="291" y="393">Marseille 🇫🇷</text>
+        <!-- ── Thessaloniki ── -->
+        <circle class="map-dot" id="dot-thess" cx="445" cy="414" r="7" fill="#c0714f"/>
+        <g class="map-label-group" id="label-thess">
+          <rect x="456" y="403" width="115" height="20" rx="3"/>
+          <text x="456" y="418">Thessaloniki 🇬🇷</text>
         </g>
 
-        <!--
-          ADD VISITING / INTERNSHIP DOTS HERE once you know the cities.
-          Example pattern:
-          <circle class="map-dot" id="dot-berlin" cx="350" cy="260" r="6" fill="#6b8f71"/>
-          <g class="map-label-group" id="label-berlin">
-            <rect x="361" y="248" width="60" height="20" rx="3"/>
-            <text x="361" y="263">Berlin 🇩🇪</text>
-          </g>
-        -->
+        <!-- ── Forli ── -->
+        <circle class="map-dot" id="dot-forli" cx="445" cy="414" r="7" fill="#c0714f"/>
+        <g class="map-label-group" id="label-forli">
+          <rect x="230" y="403" width="115" height="20" rx="3"/>
+          <text x="235" y="418">Forli 🇮🇹</text>
+        </g>
+
 
       </svg>
     </div><!-- /.europe-map -->
