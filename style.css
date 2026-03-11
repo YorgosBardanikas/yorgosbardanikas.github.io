@@ -285,8 +285,8 @@ nav {
 
 .journey-grid {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 60px;
+    grid-template-columns: 1fr 2fr;
+    gap: 100px;
     align-items: start;
 }
 
