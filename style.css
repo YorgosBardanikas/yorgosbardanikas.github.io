@@ -270,7 +270,7 @@ nav {
     Bio PAGE
 ══════════════════════════════ */
 .bio-journey {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 8rem 2rem 5rem;
 }
@@ -286,7 +286,7 @@ nav {
 .journey-grid {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 100px;
+    gap: 200px;
     align-items: start;
 }
 
