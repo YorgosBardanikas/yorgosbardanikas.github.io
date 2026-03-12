@@ -107,7 +107,7 @@ nav {
     font-size: 1.05rem; color: var(--muted);
     margin: 1rem 0 2rem; max-width: 420px;
 }
-.home-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+.home-btns { display: flex; gap: 1rem; flex-wrap: wrap; background: var(--sand);}
 
 .home-photo {
     display: flex; justify-content: center;
