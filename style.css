@@ -213,8 +213,6 @@ nav {
   margin: 1.5rem auto 2.5rem auto;
   font-size: 1.05rem;
   line-height: 1.7;
-  text-align: justify;
-  hyphens: auto;
 }
 .research-card {
     background: var(--white);
@@ -245,10 +243,10 @@ nav {
     padding: 1.6rem 0; border-bottom: 1px solid var(--sand);
     display: grid; grid-template-columns: 48px 1fr; gap: 1.2rem; align-items: start;
 }
-.pub-year { font-family: 'Lora', serif; font-size: 1rem; color: var(--terracotta); font-weight: 600; }
-.pub-title { font-family: 'Lora', serif; font-size: 1.1rem; color: var(--bark); margin-bottom: 0.25rem; }
-.pub-authors { font-size: 1.1rem; color: var(--muted); }
-.pub-journal  { font-size: 1.1rem; color: var(--accent); font-style: italic; }
+.pub-year { font-family: 'Lora', serif; font-size: 1.1rem; color: var(--terracotta); font-weight: 600; }
+.pub-title { font-family: 'Lora', serif; font-size: 1.2rem; color: var(--bark); margin-bottom: 0.25rem; }
+.pub-authors { font-size: 1.05rem; color: var(--muted); }
+.pub-journal  { font-size: 1rem; color: var(--accent); font-style: italic; }
 .pub-links { display: flex; gap: 0.7rem; margin-top: 0.4rem; }
 .pub-link {
     font-size: 0.76rem; text-decoration: none;
