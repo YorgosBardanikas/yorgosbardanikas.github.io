@@ -18,9 +18,12 @@ body {
     background: var(--cream);
     color: var(--text);
     font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.7;
     min-height: 100vh;
+}
+strong {
+  font-weight: 700;
 }
 
 /* ── NAV ── */
@@ -210,6 +213,8 @@ nav {
   margin: 1.5rem auto 2.5rem auto;
   font-size: 1.05rem;
   line-height: 1.7;
+  text-align: justify;
+  hyphens: auto;
 }
 .research-card {
     background: var(--white);
