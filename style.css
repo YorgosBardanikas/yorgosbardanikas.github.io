@@ -107,7 +107,7 @@ nav {
     font-size: 1.05rem; color: var(--muted);
     margin: 1rem 0 2rem; max-width: 420px;
 }
-.home-btns { display: flex; gap: 1rem; flex-wrap: wrap; background: var(--sand);}
+.home-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
 
 .home-photo {
     display: flex; justify-content: center;
@@ -204,6 +204,12 @@ nav {
 .research-grid {
     display: grid; grid-template-columns: repeat(3,1fr); gap: 1.4rem;
     margin-bottom: 3.5rem;
+}
+.research-overview{
+  max-width: 750px;
+  margin: 1.5rem auto 2.5rem auto;
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 .research-card {
     background: var(--white);
