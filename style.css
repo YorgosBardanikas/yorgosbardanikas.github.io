@@ -153,7 +153,15 @@ nav {
 }
 .stat-label { font-size: 0.82rem; color: var(--muted); }
 .about-text p { color: var(--muted); margin-bottom: 1.1rem; font-size: 1rem; }
-.about-text p:first-child { color: var(--text); font-size: 1.05rem; }
+.about-text p:first-child { color: var(--text); font-size: 1.1rem; }
+.about-text a {
+  color: #2b6cb0;
+  text-decoration: none;
+  font-weight: 400;
+}
+.about-text a:hover {
+  text-decoration: underline;
+}
 
 /* ══════════════════════════════
     SHARED INNER PAGE
