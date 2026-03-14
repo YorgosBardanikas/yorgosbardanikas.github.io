@@ -36,7 +36,7 @@ nav {
     border-bottom: 1px solid var(--sand);
 }
 .nav-logo {
-    font-family: 'Lora', serif;
+    font-family: 'EB Garamond', serif;
     font-size: 1rem; color: var(--bark);
     text-decoration: none; letter-spacing: 0.01em;
     cursor: pointer;
@@ -91,7 +91,7 @@ nav {
 }
 
 .home-text h1 {
-    font-family: 'Lora', serif;
+    font-family: 'EB Garamond', serif;
     font-size: clamp(2.2rem, 4vw, 3.2rem);
     font-weight: 600; line-height: 1.15;
     color: var(--bark); margin-bottom: 0.3rem;
@@ -148,7 +148,7 @@ nav {
     border-left: 3px solid var(--terracotta);
 }
 .stat-num {
-    font-family: 'Lora', serif; font-size: 1.8rem;
+    font-family: 'EB Garamond', serif; font-size: 1.8rem;
     color: var(--terracotta); font-weight: 600;
 }
 .stat-label { font-size: 0.82rem; color: var(--muted); }
@@ -178,7 +178,7 @@ nav {
     color: var(--accent); margin-bottom: 0.6rem;
 }
 .page-title {
-    font-family: 'Lora', serif;
+    font-family: 'EB Garamond', serif;
     font-size: clamp(1.9rem, 3vw, 2.6rem);
     font-weight: 600; color: var(--bark);
 }
