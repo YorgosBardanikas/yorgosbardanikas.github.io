@@ -155,7 +155,7 @@ nav {
 .about-text p { color: var(--muted); margin-bottom: 1.1rem; font-size: 1rem; }
 .about-text p:first-child { color: var(--text); font-size: 1.1rem; }
 .about-text a {
-  color: #2b6cb0;
+  color: var(--terracotta);
   text-decoration: none;
   font-weight: 400;
 }
