@@ -403,7 +403,7 @@ font-style: italic;
 .journey-content h3 {
     margin: 0;
     font-size: 1.1rem;
-    font-family: 'Lora', serif;
+    font-family: 'Source Serif 4', serif;
     color: var(--bark, #4a3728);
 }
 
@@ -458,7 +458,7 @@ font-style: italic;
 .sub-year {
     font-weight: 500;
     color: var(--muted);
-    font-size: 0.82rem;
+    font-size: 0.9rem;
     padding-top: 2px;
     white-space: nowrap;
 }
@@ -472,7 +472,7 @@ font-style: italic;
 
 .sub-content p {
     margin: 1px 0;
-    font-size: 0.83rem;
+    font-size: 0.9rem;
     color: var(--muted);
 }
 
