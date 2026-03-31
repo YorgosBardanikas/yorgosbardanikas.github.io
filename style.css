@@ -323,7 +323,7 @@ box-shadow: 0 8px 22px rgba(74,55,40,0.18);
 }
 
 .city-photo-label {
-font-size: 0.75rem;
+font-size: 0.9rem;
 color: var(--muted, #7a6a5a);
 margin-top: 5px;
 text-align: center;
@@ -376,7 +376,7 @@ font-style: italic;
 .journey-year {
     font-weight: 600;
     color: var(--muted);
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     padding-top: 3px;
     white-space: nowrap;
 }
