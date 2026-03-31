@@ -376,7 +376,7 @@ font-style: italic;
 .journey-year {
     font-weight: 600;
     color: var(--muted);
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     padding-top: 3px;
     white-space: nowrap;
 }
