@@ -545,6 +545,8 @@ font-style: italic;
     color: rgb(255, 255, 255); font-size: 0.9rem; padding: 0.8rem 0.8rem 0.6rem;
     opacity: 0; transition: opacity 0.2s;
 }
+.gallery-caption a{color: var(--terracotta);text-decoration:none;}
+.gallery-caption a:hover{text-decoration:underline;}
 .gallery-item:hover .gallery-caption { opacity: 1; }
 
 /* lightbox */
