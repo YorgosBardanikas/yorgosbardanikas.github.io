@@ -363,8 +363,8 @@ font-style: italic;
 .journey-item {
     position: relative;
     display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 25px;
+    grid-template-columns: 100px 1fr;
+    gap: 16px;
     margin-bottom: 8px;
     align-items: start;
     cursor: default;
@@ -400,7 +400,7 @@ font-style: italic;
 .journey-year {
     font-weight: 600;
     color: var(--muted);
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     padding-top: 3px;
     white-space: nowrap;
 }
