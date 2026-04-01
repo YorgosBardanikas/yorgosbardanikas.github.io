@@ -403,6 +403,7 @@ font-style: italic;
     font-size: 1.1rem;
     padding-top: 3px;
     white-space: nowrap;
+    line-height: 1.2;
 }
 
 .journey-content h3 {
