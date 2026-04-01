@@ -363,8 +363,8 @@ font-style: italic;
 .journey-item {
     position: relative;
     display: grid;
-    grid-template-columns: 90px 1fr;
-    gap: 16px;
+    grid-template-columns: 120px 1fr;
+    gap: 25px;
     margin-bottom: 8px;
     align-items: start;
     cursor: default;
