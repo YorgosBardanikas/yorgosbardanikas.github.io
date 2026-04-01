@@ -377,7 +377,7 @@ font-style: italic;
     content: "";
     position: absolute;
     left: -35px;
-    top: 0.6em;
+    top: 0.8em;
     width: 10px;
     height: 10px;
     background: var(--terracotta, #c0714f);
