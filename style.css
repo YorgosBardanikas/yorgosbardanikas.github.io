@@ -449,7 +449,7 @@ font-style: italic;
     content: "";
     position: absolute;
     left: -22px;
-    top: 12px;
+    top: 0.9em;
     width: 7px;
     height: 7px;
     background: var(--cream);
