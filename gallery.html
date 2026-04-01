@@ -32,9 +32,9 @@
 
         <div class="gallery-item" onclick="openLightbox(this)">
             <img src="images/Talk_IBS_2023.jpg" alt="Talk_IBS">
-            <div class="gallery-caption">Scientfic outreach to high-school IBS, March 2023. See more
+            <div class="gallery-caption">Scientific outreach to high-school IBS, March 2023. 
                 <a href="https://research.ncl.ac.uk/in2pb/outreach/internationalbilingualschoolofprovence/" 
-                target="_blank">here</a>.
+                target="_blank" onclick="event.stopPropagation()">See more</a>.
             </div>
         </div>
 
@@ -50,7 +50,7 @@
 
         <div class="gallery-item" onclick="openLightbox(this)">
             <img src="images/Talk_IBS_2024.JPG" alt="Talk_IBS">
-            <div class="gallery-caption">Scientfic outreach to high-school IBS, June 2024</div>
+            <div class="gallery-caption">Scientific outreach to high-school IBS, June 2024</div>
         </div>
 
         <div class="gallery-item" onclick="openLightbox(this)">
@@ -98,9 +98,10 @@
   function showPhoto(index) {
     const item    = items[index];
     const img     = item.querySelector('img');
-    const caption = item.querySelector('.gallery-caption');
+    // const caption = item.querySelector('.gallery-caption');
     document.getElementById('lightbox-img').src          = img.src;
-    document.getElementById('lightbox-caption').textContent = caption ? caption.textContent : '';}
+    // document.getElementById('lightbox-caption').textContent = caption ? caption.textContent : '';}
+    document.getElementById("lightbox-caption").innerHTML = element.querySelector(".gallery-caption").innerHTML;}
 
   function changePhoto(dir) {
     currentIndex = (currentIndex + dir + items.length) % items.length;
