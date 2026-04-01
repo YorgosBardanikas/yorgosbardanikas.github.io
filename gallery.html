@@ -63,8 +63,10 @@
     </div>
 </div>
 
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+<div class="lightbox" id="lightbox">
   <button class="lightbox-close" onclick="closeLightbox()">×</button>
+  <button class="lightbox-arrow left"  onclick="changePhoto(-1)">&#8592;</button>
+  <button class="lightbox-arrow right" onclick="changePhoto(1)">&#8594;</button>
   <div class="lightbox-inner">
     <img id="lightbox-img" src="" alt=""/>
     <p id="lightbox-caption"></p>
@@ -72,16 +74,36 @@
 </div>
 
 <script>
+  let currentIndex = 0;
+  const items = Array.from(document.querySelectorAll('.gallery-item'));
+
   function openLightbox(item) {
-    const img = item.querySelector('img');
+    currentIndex = items.indexOf(item);
+    showPhoto(currentIndex);
+    document.getElementById('lightbox').classList.add('open');}
+
+  function showPhoto(index) {
+    const item    = items[index];
+    const img     = item.querySelector('img');
     const caption = item.querySelector('.gallery-caption');
-    if (!img) return;
-    document.getElementById('lightbox-img').src = img.src;
-    document.getElementById('lightbox').classList.add('open');
+    document.getElementById('lightbox-img').src          = img.src;
     document.getElementById('lightbox-caption').textContent = caption ? caption.textContent : '';}
 
-  function closeLightbox() {document.getElementById('lightbox').classList.remove('open');}
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  function changePhoto(dir) {
+    currentIndex = (currentIndex + dir + items.length) % items.length;
+    showPhoto(currentIndex);}
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');}
+
+  // click outside the image to close, but not on arrows
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();});
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape')     closeLightbox();
+    if (e.key === 'ArrowRight') changePhoto(1);
+    if (e.key === 'ArrowLeft')  changePhoto(-1);});
 </script>
 
 <footer>© 2026 · Georgios Bardanikas, PhD </footer>
