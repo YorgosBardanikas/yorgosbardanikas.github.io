@@ -98,10 +98,10 @@
   function showPhoto(index) {
     const item    = items[index];
     const img     = item.querySelector('img');
-    // const caption = item.querySelector('.gallery-caption');
+    const caption = item.querySelector('.gallery-caption');
     document.getElementById('lightbox-img').src          = img.src;
     // document.getElementById('lightbox-caption').textContent = caption ? caption.textContent : '';}
-    document.getElementById("lightbox-caption").innerHTML = element.querySelector(".gallery-caption").innerHTML;}
+    document.getElementById("lightbox-caption").innerHTML = caption ? caption.innerHTML : '';}
 
   function changePhoto(dir) {
     currentIndex = (currentIndex + dir + items.length) % items.length;
