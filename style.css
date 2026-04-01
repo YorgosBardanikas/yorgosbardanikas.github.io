@@ -41,16 +41,48 @@ nav {
     text-decoration: none; letter-spacing: 0.01em;
     cursor: pointer;
 }
+.nav-links { 
+  display: flex; 
+  gap: 1rem; 
+  list-style: none; 
+}
+.nav-links a {
+  display: inline-block;               /* IMPORTANT */
+  text-decoration: none; 
+  color: var(--muted);
+
+  font-size: 0.85rem; 
+  font-weight: 400;
+  letter-spacing: 0.06em; 
+  text-transform: uppercase;
+
+  padding: 6px 12px;                  /* creates the rectangle */
+  border-radius: 6px;                 /* soft modern corners */
+
+  background: transparent;            /* default state */
+  transition: all 0.2s ease;
+}
+.nav-links a:hover { 
+  color: var(--terracotta);
+  background: rgba(0, 0, 0, 0.05);   /* soft grey */
+}
+.nav-links a.active { 
+  color: white;
+  background: var(--bark);           /* your main accent */
+  font-weight: 500;
+}
+/*
 .nav-links { display: flex; gap: 2.2rem; list-style: none; }
 .nav-links a {
     text-decoration: none; color: var(--muted);
-    font-size: 0.85rem; font-weight: 400;
+    font-size: 0.85rem; font-weight: 500;
     letter-spacing: 0.06em; text-transform: uppercase;
     transition: color 0.2s; cursor: pointer;
     background: none; border: none; padding: 0;
 }
-.nav-links a:hover  { color: var(--terracotta); }
-.nav-links a.active { color: var(--bark); font-weight: 500; }
+.nav-links a:hover  { color: var(--terracotta); background: rgba(0, 0, 0, 0.05);}
+.nav-links a.active { color: var(--bark); font-weight: 600; }
+*/
 
 /* ── PAGE VIEWS ── */
 .page { display: none; animation: fadeUp 0.5s ease both; }
@@ -545,7 +577,7 @@ font-style: italic;
     color: rgb(255, 255, 255); font-size: 0.9rem; padding: 0.8rem 0.8rem 0.6rem;
     opacity: 0; transition: opacity 0.2s;
 }
-.gallery-caption a{color: var(--terracotta);text-decoration:none;}
+.gallery-caption a{color: rgb(255, 255, 255); text-decoration:none;}
 .gallery-caption a:hover{text-decoration:underline;}
 .gallery-item:hover .gallery-caption { opacity: 1; }
 
