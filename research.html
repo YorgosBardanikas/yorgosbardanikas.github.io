@@ -22,55 +22,103 @@
 
 <div class="inner-page">
     <div class="page-header">
-        <span class="section-label">Research</span>
         <h1 class="page-title">What I work on</h1>
         <p class="research-overview">
-            My research focuses on how our brains anticipate future events, make decisions 
-            under uncertainty and learn. I combine large-scale neural data analysis, behavioral
-            analysis and computational modeling, to study how distributed brain networks support 
-            goal-directed behavior.
-
-            Applying machine learning algorithms, dynamical systems theory, information theory, 
-            reinforcement learning, and statistical modeling, I investigate how complex biological 
-            systems process information, adapt to changing environments, and optimize actions. 
-            Beyond fundamental neuroscience, my work connects to broader questions in artificial 
-            intelligence, adaptive systems, and modeling of decision processes.</p>
+            I study how biological systems predict future events, make decisions, and learn. 
+            My work combines computational neuroscience, machine learning, neural networks, and  
+            statistical modeling to understand how evolving neural states generate complex behavior.</p>
     </div>
     
-    <div class="research-grid">
-        <div class="research-card">
-        <h3>Motor Prediction and Fronto-Parietal Network Dynamics</h3>
-        <p>I studied how premotor and posterior parietal areas support anticipatory movements. 
-            Using large-scale simultaneous neural recordings, dynamical systems and advanced 
-            statistical analysis, I examined how the brain anticipates future actions when 
-            environmental structure becomes predictable.</p>
-        </div>
-        <div class="research-card">
-        <h3>Decision-Making Under Social Uncertainty in Premotor Circuits</h3>
-        <p>I investigated how premotor circuits represent uncertainty during social interaction. 
-            Using information-theoretic analyses of neural population activity, I studied how 
-            cooperative decision strategies emerge when agents must coordinate actions to maximize reward.</p>
-        </div>
-        <div class="research-card">
-        <h3>Information Gain and Learning in Fronto-Cingulate Networks</h3>
-        <p>I examined how the brain evaluates information during trial-and-error learning. By combining 
-            reinforcement learning models with behavioral and neural data, I investigated how frontal and 
-            cingulate regions encode information gain during trial-and-error decision making.</p>
-        </div>
+    <!-- CARD 1: PhD research overview -->
+    <h2 class="pubs-title">PhD research</h2>
+
+    <article class="wide-card">
+    <div class="wide-card-body">
+        <h3>Dynamic Cortical Interactions Underlying Cognitive Motor Behaviors</h3>
+        <p>
+        I analyzed large-scale neural and behavioral recordings to characterize neural interactions 
+        between frontal, motor, and parietal areas during anticipation, decision making and learning.
+        </p>
+        <ul class="task-list">
+            <li><strong>How does the brain anticipate upcoming movements?</strong>
+            <br><a href="https://github.com/YorgosBardanikas/vision4action" target="_blank"> See code on GitHub ↗</a>
+            | <a href="https://doi.org/10.64898/2026.03.03.709252" target="_blank"> See preprint on bioRxiv ↗</a></li>
+            <li><strong>How do agents coordinate their actions when outcomes depend on another agent?</strong></li>            
+            <li><strong>How does the brain represent information acquired through experience?</strong>
+            <a href="https://github.com/YorgosBardanikas/luv-sbri" target="_blank"> See code on GitHub ↗</a></li>
+        </ul>
+    <a class="btn btn-primary" href="https://theses.fr/s377009" target="_blank">
+    See PhD Dissertation ↗
+    </a>
     </div>
 
+    <div class="wide-card-photo">
+        <img src="images/phd-studies-overview.jpg" 
+        alt="PhD Overview. Study 1: Fronto-parietal interactions during motor anticipation.
+        Study 2: Premotor interactions during learning under social uncertainty.
+        Study 3: Frontal encoding of information gain during learning.">
+    </div>
+    
+    <div class="skills-row wide-card-skills">
+        <span class="skill-tag">Time series analysis</span>
+        <span class="skill-tag">Classification/Clustering</span>
+        <span class="skill-tag">Reinforcement Learning models</span>
+        <span class="skill-tag">Dynamical systems</span>
+        <span class="skill-tag">Information theory</span>
+        <span class="skill-tag">Statistical modeling</span>
+    </div>
+    </article>
+    
+
+    <!-- CARD 2: Deep learning projects overview -->
+    <h2 class="pubs-title">Deep learning projects</h2>
+
+    <article class="wide-card">
+    <div class="wide-card-body">
+        <h3>Hand Trajectory Prediction</h3>
+        <p>
+        Predicting where a movement is heading before it ends. Using only the
+        beginning of a hand movement, the project addresses three related tasks:
+        </p>
+        <ul class="task-list">
+        <li><strong>Endpoint prediction:</strong> estimate the final hand position</li>
+        <li><strong>Target classification:</strong> identify the intended target among alternatives</li>
+        <li><strong>Trajectory forecasting:</strong> generate the remaining movement</li>
+        </ul>
+        <a class="btn btn-primary" href="https://github.com/YorgosBardanikas/traj_prediction" target="_blank">
+        See source code on GitHub ↗
+        </a>
+    </div>
+
+    <div class="wide-card-photo">
+        <img src="images/predicted_trajectories.jpg" 
+        alt="Four example center-out trajectories. Models are trained on the 'true past' trajectory
+        and generate the 'predicted future', matching accurately the 'true future'.">
+    </div>
+
+    <div class="skills-row wide-card-skills">
+        <span class="skill-tag">PyTorch</span>
+        <span class="skill-tag">Temporal CNN</span>
+        <span class="skill-tag">RNN</span>
+        <span class="skill-tag">Seq2seq encoder-decoder</span>
+        <span class="skill-tag">Autoregressive models</span>
+    </div>
+    </article>
+
+
+    <!-- Recent works -->
     <h2 class="pubs-title">Recent Works</h2>
 
     <div class="pub-item">
 
         <div class="pub-year">2026</div>
             <div>
-            <div class="pub-title">Reciprocal Fronto-Parietal Interactions Support Motor 
-                                    Anticipation during Sequential Reaching</div>
+            <div class="pub-title">Reciprocal Fronto-Parietal Interactions Support Distinct Motor 
+                                    Strategies during Sequential Reaching</div>
             <div class="pub-authors"><strong>Bardanikas G.</strong>, ... , Brovelli A., Brochier T.</div>
             <div class="pub-journal">bioRxiv</div>
             <div class="pub-links">
-                <a class="pub-link" target="_blank" href="https://doi.org/10.64898/2026.03.03.709252 ">DOI</a>
+                <a class="pub-link" target="_blank" href="https://doi.org/10.64898/2026.03.03.709252">DOI</a>
             </div>
         </div>
 
@@ -99,6 +147,32 @@
         </div>
     </div>
 </div>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">×</button>
+  <div class="lightbox-inner">
+    <img id="lightbox-img" src="" alt=""/>
+    <p id="lightbox-caption"></p>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.wide-card-photo img').forEach(img => {
+    img.addEventListener('click', () => {
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox-caption').textContent = img.alt;
+      document.getElementById('lightbox').classList.add('open');
+    });
+  });
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
 
 <footer>© 2026 · Georgios Bardanikas, PhD </footer>
 
